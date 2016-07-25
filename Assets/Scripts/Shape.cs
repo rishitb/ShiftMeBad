@@ -16,15 +16,12 @@ public class Shape {
     [Tooltip("Weight of the shape which affects physics properties")]
     public float mass;
 
-    [Tooltip("Extent of scalabillity of this shape")]
-    [Range(0,10)]
-    public int scalability;
+    [Tooltip("Is the object scalable?")]
+    public bool scalability;
 
-    [Tooltip("Resistance of this shape to Fire")]
-    [Range(0, 1)]
-    public float fireResistance;
+    [Tooltip("Is the object resistant to heat?")]
+    public bool heatResistant;
 
-    [Tooltip("Resistance of this shape to water/ice")]
-    [Range(0, 1)]
-    public float waterResistance;
+    [Tooltip("Is the object resistant to cold?")]
+    public bool coldResistant;
 }
