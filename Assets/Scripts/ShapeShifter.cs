@@ -33,7 +33,7 @@ public class ShapeShifter : MonoBehaviour {
 	void Update () {
 
         if (Input.GetKeyDown(KeyCode.D) && ShapeGlobalVars.selectedObject==this.gameObject)
-            Debug.Log("Name: " + currentShape.shapeName + " " + currentShape.fireResistance + " " + currentShape.waterResistance);
+            Debug.Log("Name: " + currentShape.shapeName + " " + currentShape.heatResistant + " " + currentShape.coldResistant);
 
         if (Input.GetKeyDown(KeyCode.Alpha1) && !isShifting)
             ShiftShape(ShapeGlobalVars.ShapeStyle.Circle);
