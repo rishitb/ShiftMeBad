@@ -1,3 +1,2 @@
 # ShiftMeBad
-Initial base commit to Remote master branch
-This Branch <ATP>
+Initial base commit to Remote branch atp
