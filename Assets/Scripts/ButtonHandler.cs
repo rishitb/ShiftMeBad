@@ -33,14 +33,26 @@ public class ButtonHandler : MonoBehaviour {
     {
         switch (btnType)
         {
-            case ShapeGlobalVars.ButtonTypes.CreateShape:
+            case ShapeGlobalVars.ButtonTypes.CreateCircle:
+            case ShapeGlobalVars.ButtonTypes.CreateSquare:
+            case ShapeGlobalVars.ButtonTypes.CreateTriangle:
                 GameObject toCreate = GameObject.Instantiate(shapePrefab) as GameObject;
                 toCreate.GetComponent<PlayerController>().SelectObject();
-                toCreate.GetComponent<ShapeShifter>().ShiftShape(ShapeGlobalVars.ShapeStyle.Triangle);
+
+                if(btnType==ShapeGlobalVars.ButtonTypes.CreateCircle)
+                    toCreate.GetComponent<ShapeShifter>().ShiftShape(ShapeGlobalVars.ShapeStyle.Circle);
+
+                if (btnType == ShapeGlobalVars.ButtonTypes.CreateSquare)
+                    toCreate.GetComponent<ShapeShifter>().ShiftShape(ShapeGlobalVars.ShapeStyle.Square);
+
+                if (btnType == ShapeGlobalVars.ButtonTypes.CreateTriangle)
+                    toCreate.GetComponent<ShapeShifter>().ShiftShape(ShapeGlobalVars.ShapeStyle.Triangle);
+
                 toCreate.transform.SetParent(this.transform, false);
                 toCreate.transform.localScale = ShapeGlobalVars.defaultShapeScale;
-               
-                toCreate.transform.localPosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0f);                                       
+                               
+                toCreate.transform.localPosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0f);      
+                                                 
                 break;
 
             case ShapeGlobalVars.ButtonTypes.ShiftShape:

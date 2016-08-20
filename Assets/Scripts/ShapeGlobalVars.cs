@@ -12,7 +12,9 @@ public class ShapeGlobalVars {
 
     public enum ButtonTypes
     {
-        CreateShape,// Can turn into individual types for like CreateCircle/Triangle..
+        CreateCircle,
+        CreateSquare,
+        CreateTriangle,
         ShiftShape
     }
 
