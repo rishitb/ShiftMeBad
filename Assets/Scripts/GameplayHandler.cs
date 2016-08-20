@@ -27,4 +27,18 @@ public class GameplayHandler : MonoBehaviour {
         }
     }
 
+    void OnParticleCollision(GameObject other)
+    {
+        if (other.gameObject.CompareTag("Heat") && !_shapeShifter.currentShape.heatResistant)
+        {
+            //We can add some effect when the object is destroyed
+            Destroy(this.gameObject);
+        }
+
+        if (other.gameObject.CompareTag("Cold") && !_shapeShifter.currentShape.coldResistant)
+        {
+            //We can add some effect when the object is destroyed
+            Destroy(this.gameObject);
+        }
+    }
 }
