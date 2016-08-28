@@ -25,6 +25,7 @@ public class CustomObjects : MonoBehaviour {
         //Setting component properties
         g.GetComponent<RectTransform>().anchoredPosition.Set(0.5f, 0.5f);
         g.GetComponent<Image>().color = new Color(1f, 1f, 1f, 0f);
+        g.GetComponent<Image>().raycastTarget = false;
         g.GetComponent<Collider2D>().isTrigger = true;
         g.GetComponent<Rigidbody2D>().sleepMode = RigidbodySleepMode2D.NeverSleep;
 
@@ -51,6 +52,7 @@ public class CustomObjects : MonoBehaviour {
         //Setting component properties
         g.GetComponent<RectTransform>().anchoredPosition.Set(0.5f, 0.5f);
         g.GetComponent<Image>().color = new Color(1f, 1f, 1f, 0f);
+        g.GetComponent<Image>().raycastTarget = false;
         g.GetComponent<Collider2D>().isTrigger = true;
         g.GetComponent<Rigidbody2D>().sleepMode = RigidbodySleepMode2D.NeverSleep;
 
