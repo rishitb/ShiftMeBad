@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour,IPointerDownHandler, IDragHandler,
 
     public void OnDrag(PointerEventData eventData)
     {
-   
+   		
     }
 
     public void OnPointerDown(PointerEventData eventData)
@@ -57,6 +57,10 @@ public class PlayerController : MonoBehaviour,IPointerDownHandler, IDragHandler,
         if (gameObject.GetComponent<ShapeShifter>().currentShape.shapeName == ShapeGlobalVars.ShapeStyle.Circle)
             gameObject.GetComponent<Rigidbody2D>().freezeRotation = true;
 
+		if (gameObject.GetComponent<ShapeShifter> ().currentShape.shapeName == ShapeGlobalVars.ShapeStyle.Triangle) 
+		{
+			gameObject.AddComponent<PinchToScale> ();
+		}
         originalPos=grabbedObject.position;
     }
 
