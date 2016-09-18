@@ -25,7 +25,7 @@ public class ButtonHandler : MonoBehaviour {
     }
     #endregion
 
-    #region MonoBehaviour
+    #region MonoBehaviour   
 
     public GameObject shapePrefab;
 
@@ -70,6 +70,9 @@ public class ButtonHandler : MonoBehaviour {
                 }
                 break;
 
+            case ShapeGlobalVars.ButtonTypes.ShowHint:
+                AdsManager.instance.ShowRewardedAd(ShapeGlobalVars.RewardTypes.Hint);
+                break;
             default:
                 break;
         }
