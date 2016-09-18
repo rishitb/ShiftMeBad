@@ -78,7 +78,9 @@ public class GameplayHandler : MonoBehaviour {
 
             this.transform.GetComponent<PlayerController>().enabled = false;
             this.GetComponent<Rigidbody2D>().gravityScale = 0;      //might not be needed
+            this.GetComponent<Rigidbody2D>().freezeRotation = true;
             this.transform.localPosition = _targetSocket.transform.localPosition;
+            this.transform.rotation = _targetSocket.transform.rotation;
             this.GetComponent<Collider2D>().enabled = false;
             //this.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 

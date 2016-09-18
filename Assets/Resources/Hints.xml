@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Levels>
+	<Level number="1">
+		<Hint>This is hint for Level 1</Hint>
+	</Level>
+	<Level number="2">
+		<Hint>This is hint for Level 2</Hint>
+	</Level>
+	<Level number="3">
+		<Hint>This is hint for Level 3</Hint>
+	</Level>
+	<Level number="4">
+		<Hint>This is hint for Level 4</Hint>
+	</Level>
+	<Level number="5">
+		<Hint>This is hint for Level 5</Hint>
+	</Level>
+</Levels>
