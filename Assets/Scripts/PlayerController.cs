@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour,IPointerDownHandler, IDragHandler,
     {
         if (grabbedObject!=null)
         {
-          
+            grabbedObject.collisionDetectionMode = CollisionDetectionMode2D.Continuous; 
             Vector3 MouseWorldPos3D =  Input.mousePosition;
             Vector2 MouseScreenPos2D = new Vector2(MouseWorldPos3D.x, MouseWorldPos3D.y);
 
