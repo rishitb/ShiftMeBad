@@ -4,18 +4,19 @@ using UnityEngine.EventSystems;
 using DG.Tweening;
 using System.Collections;
 
-public class CreationPanelHandler : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class CreationPanelHandler : MonoBehaviour, IPointerDownHandler
 {
     [Tooltip("Time taken for buttons to popup and wait")]
     public float effectDelay;
 
     private List<GameObject> buttonObjects;
     private bool effectOn;
+    private bool drawerOpen;
 
     void Start()
     {
         effectOn = false;
-
+        drawerOpen = false;
         buttonObjects = new List<GameObject>();
         foreach (RectTransform child in this.transform)
         {
@@ -24,14 +25,18 @@ public class CreationPanelHandler : MonoBehaviour, IPointerEnterHandler, IPointe
         }
     }
 
-    public void OnPointerEnter(PointerEventData eventData)
+    public void OnPointerDown(PointerEventData eventData)
     {
-        StartCoroutine(ShowButtons());
-    }
-
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        StartCoroutine(HideButtons());
+        if (!drawerOpen)
+        {
+            drawerOpen = true;
+            StartCoroutine(ShowButtons());
+        }
+        else
+        {
+            drawerOpen = false;
+            StartCoroutine(HideButtons());
+        }
     }
 
     IEnumerator ShowButtons()

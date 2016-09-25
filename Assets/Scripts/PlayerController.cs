@@ -10,15 +10,13 @@ public class PlayerController : MonoBehaviour,IPointerDownHandler, IDragHandler,
 
     public Rigidbody2D grabbedObject;
     Vector2 originalPos=Vector2.zero;
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-      
-	}
+
+    private GameplayHandler _gameplayHandler;
+
+    void Start()
+    {
+        _gameplayHandler = GetComponent<GameplayHandler>();
+    }
 
     void FixedUpdate()
     {
@@ -48,7 +46,7 @@ public class PlayerController : MonoBehaviour,IPointerDownHandler, IDragHandler,
 
     public void OnDrag(PointerEventData eventData)
     {
-   
+   		
     }
 
     public void OnPointerDown(PointerEventData eventData)
@@ -59,6 +57,10 @@ public class PlayerController : MonoBehaviour,IPointerDownHandler, IDragHandler,
         if (gameObject.GetComponent<ShapeShifter>().currentShape.shapeName == ShapeGlobalVars.ShapeStyle.Circle)
             gameObject.GetComponent<Rigidbody2D>().freezeRotation = true;
 
+		if (gameObject.GetComponent<ShapeShifter> ().currentShape.shapeName == ShapeGlobalVars.ShapeStyle.Triangle) 
+		{
+			gameObject.AddComponent<PinchToScale> ();
+		}
         originalPos=grabbedObject.position;
     }
 
@@ -66,6 +68,9 @@ public class PlayerController : MonoBehaviour,IPointerDownHandler, IDragHandler,
     {
         grabbedObject.velocity = Vector2.zero;
         grabbedObject = null;
+
+        if (_gameplayHandler.insideSocket)
+            _gameplayHandler.LockObject();
     }
 
    

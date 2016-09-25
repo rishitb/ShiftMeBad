@@ -15,7 +15,16 @@ public class ShapeGlobalVars {
         CreateCircle,
         CreateSquare,
         CreateTriangle,
-        ShiftShape
+        ShiftShape,
+        ShowHint
+    }
+
+    public enum RewardTypes
+    {
+        None,
+        Hint,
+        Creation,
+        ShapeShift
     }
 
     public static Vector3 defaultShapeScale = new Vector3(2f, 2f, 1f);
